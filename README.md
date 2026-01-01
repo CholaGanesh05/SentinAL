@@ -1,76 +1,115 @@
-Here is a **professional-grade README.md** designed to make your repository stand out to recruiters and developers. It highlights the technical complexity of your project (AI, NLP, Graph Theory) while remaining easy to understand.
-
-**Create a file named `README.md` in your root folder and paste this content:**
-
-```markdown
-# 🛡️ SentinAL: AI-Powered Financial Risk Intelligence
+# 🛡️ SentinAL: AI-Driven Financial Risk Intelligence Engine
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
-![Framework](https://img.shields.io/badge/Framework-Streamlit-red)
-![AI Models](https://img.shields.io/badge/Models-XGBoost%20%7C%20FinBERT-green)
-![Status](https://img.shields.io/badge/Status-Active-success)
+![Architecture](https://img.shields.io/badge/Architecture-Modular-orange)
+![Status](https://img.shields.io/badge/Status-Research%20Beta-success)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
-> **SentinAL** is a next-generation financial surveillance platform designed to detect early warning signals of corporate distress. It moves beyond traditional credit scoring by fusing **Quantitative Financials**, **Unstructured News Sentiment**, and **Systemic Network Contagion** into a unified, 360-degree risk profile.
+**SentinAL** is a modular, explainable financial risk intelligence system designed to detect early warning signals of corporate distress. It fuses structured financial data, unstructured news sentiment, and systemic network risk metrics into a unified, interpretable risk profile.
 
----
-
-## 📸 Dashboard Preview
-
-*(Add a screenshot of your dashboard here. To do this: Take a screenshot, drag it into a GitHub issue comment to generate a link, and paste the link here)*
+Unlike traditional credit scoring systems that operate in isolation, SentinAL functions as a multi-signal surveillance engine suitable for quantitative research, enterprise risk monitoring, and financial intelligence applications.
 
 ---
 
-## 🚀 Key Features
+## 🎯 Core Objectives
 
-### 1. 💰 Credit Risk Engine (Quantitative)
-- **Model:** XGBoost Classifier (Gradient Boosting).
-- **Function:** Analyzes hard financial ratios (ROA, Leverage, Operating Margin) to predict the Probability of Default (PD).
-- **Output:** A calibrated credit score (0-100) indicating financial health.
+1.  **Multi-Modal Detection:** Combine quantitative (balance sheet), qualitative (news), and contagion (network) risk factors.
+2.  **Explainability:** Produce risk scores that are traceable back to specific financial ratios or news events.
+3.  **Systemic Awareness:** Identify entities that are "too central to fail" via graph theory.
+4.  **Reproducibility:** Maintain clean ML engineering practices with separated data and logic.
 
-### 2. 📰 Sentiment Risk Engine (Qualitative)
-- **Model:** FinBERT (Financial BERT by ProsusAI).
-- **Function:** Uses Natural Language Processing (NLP) to scan news headlines for panic signals, fraud allegations, and negative market sentiment.
-- **Output:** A sentiment polarity score that captures "soft" market risks invisible to balance sheets.
+---
 
-### 3. 🕸️ Systemic Risk Engine (Network Theory)
-- **Model:** Graph Theory (NetworkX) & PageRank Centrality.
-- **Function:** Maps transaction relationships between entities to identify "Too Big to Fail" nodes. Calculates contagion potential—if this entity fails, who else falls?
-- **Output:** A centrality-based systemic risk score.
+## 🧠 System Architecture
 
-### 4. 🧠 The Fusion Brain
-- **Logic:** An ensemble aggregation layer that normalizes signals from all three engines.
-- **Result:** A final **Composite Risk Score** and a **Risk Level** (Low, Medium, High, Critical).
+The system operates on a decoupled engine architecture, allowing for independent ablation studies and model upgrades.
+
+```mermaid
+graph TD
+    A[Financial Ratios] --> B(Credit Risk Engine)
+    C[News Headlines] --> D(Sentiment Risk Engine)
+    E[Entity Network] --> F(Systemic Risk Engine)
+    B --> G{Fusion Layer}
+    D --> G
+    F --> G
+    G --> H[Final Risk Profile]
+
+```
+
+*(Note: If the diagram above does not render, it represents data flowing into three distinct engines—Credit, Sentiment, and Systemic—which then feed into a weighted Fusion Layer.)*
+
+---
+
+## 🚀 Key Components
+
+### 1️⃣ Credit Risk Engine (Quantitative)
+
+* **Model:** XGBoost Classifier
+* **Inputs:** Financial ratios (Leverage, ROA, Operating Margin, Liquidity)
+* **Output:** Probability of Default (PD) → Normalized Credit Score (0–100)
+* **Design Goal:** Establish a strong baseline solvency assessment based on hard numbers.
+
+### 2️⃣ Sentiment Risk Engine (Qualitative)
+
+* **Model:** FinBERT (ProsusAI)
+* **Inputs:** Financial news headlines and unstructured text.
+* **Method:** Transformer-based sentiment inference (Positive/Neutral/Negative).
+* **Output:** Aggregated sentiment polarity score.
+* **Design Goal:** Capture market fear, fraud allegations, and narrative risks invisible to balance sheets.
+
+### 3️⃣ Systemic Risk Engine (Network-Based)
+
+* **Method:** Graph Analytics (NetworkX)
+* **Metrics:** PageRank Centrality, Node Degree.
+* **Inputs:** Entity-to-entity transaction/exposure network.
+* **Output:** Contagion-aware systemic risk score.
+* **Design Goal:** Quantify the potential for cascading failure and identify central nodes.
+
+### 4️⃣ Fusion & Decision Layer
+
+* **Logic:** Weighted Ensemble Aggregation.
+* **Configuration:** * Credit: ~50%
+* Sentiment: ~30%
+* Systemic: ~20%
+
+
+* **Output:** Composite Risk Score & Risk Tier (Low | Medium | High | Critical).
 
 ---
 
 ## 🛠️ Technology Stack
 
-- **Core:** Python 3.9+
-- **Data Processing:** Pandas, NumPy
-- **Machine Learning:** XGBoost, Scikit-Learn
-- **NLP / Transformers:** HuggingFace Transformers, PyTorch
-- **Graph Analytics:** NetworkX
-- **Visualization:** Streamlit, Plotly Express, Plotly Graph Objects
+| Layer | Tools |
+| --- | --- |
+| **Core** | Python 3.9+ |
+| **Data Processing** | Pandas, NumPy |
+| **Machine Learning** | XGBoost, Scikit-Learn |
+| **NLP** | HuggingFace Transformers, PyTorch, FinBERT |
+| **Graph Analytics** | NetworkX |
+| **Visualization** | Streamlit, Plotly Express |
 
 ---
 
-## ⚙️ Installation & Usage
+## ⚙️ Installation & Reproducibility
+
+To ensure a clean environment, data and models are not committed to the repository. Follow these steps to reproduce the environment:
 
 ### 1. Clone the Repository
+
 ```bash
 git clone [https://github.com/CholaGanesh05/SentinAL.git](https://github.com/CholaGanesh05/SentinAL.git)
 cd SentinAL
 
 ```
 
-### 2. Set Up Virtual Environment
+### 2. Create Virtual Environment
 
 ```bash
 # Windows
 python -m venv venv
 .\venv\Scripts\activate
 
-# Mac/Linux
+# macOS / Linux
 python3 -m venv venv
 source venv/bin/activate
 
@@ -83,18 +122,32 @@ pip install -r requirements.txt
 
 ```
 
-### 4. Run the Risk Analysis Pipeline
+### 4. Data Setup (Important)
 
-This script processes the raw data through all three engines and generates the JSON intelligence report.
+Since `data/`, `models/`, and `outputs/` are git-ignored to maintain repository hygiene, you must ensure the folder structure exists locally:
+
+```bash
+# The system expects these folders
+mkdir data
+mkdir models
+mkdir outputs
+
+```
+
+*(Note: Place your source CSVs in `data/` and trained models in `models/` before running analysis.)*
+
+### 5. Run End-to-End Analysis
+
+This script executes the full pipeline: Data Ingestion → Inference (Credit/Sentiment/Systemic) → Fusion → Serialization.
 
 ```bash
 python run_full_analysis.py
 
 ```
 
-### 5. Launch the Command Center
+### 6. Launch Command Center
 
-Open the interactive dashboard to visualize the results.
+Visualize the results in the interactive dashboard.
 
 ```bash
 streamlit run dashboard.py
@@ -107,46 +160,33 @@ streamlit run dashboard.py
 
 ```text
 SentinAL/
-├── data/                   # Raw and processed datasets
-├── models/                 # Saved XGBoost and Fusion models
-├── outputs/                # Final JSON risk reports
-├── src/                    # Source Code
-│   ├── credit_risk/        # Credit Engine Logic
-│   ├── sentiment_risk/     # FinBERT & News Logic
-│   ├── systemic_risk/      # Graph & Network Logic
-│   └── aggregation/        # Fusion Brain Logic
-├── dashboard.py            # Streamlit Visualization Code
-├── main.py                 # Core Application Wrapper
-├── run_full_analysis.py    # Batch Execution Script
-└── requirements.txt        # Python Dependencies
+├── src/                    # Core Engine Implementations
+│   ├── credit_risk/        # XGBoost Logic
+│   ├── sentiment_risk/     # FinBERT Logic
+│   ├── systemic_risk/      # Graph Theory Logic
+│   ├── aggregation/        # Fusion Logic
+│   ├── ingestion/          # Data Loaders
+│   └── schemas/            # Data Validation (Pydantic)
+├── dashboard.py            # Streamlit Visualization Layer
+├── main.py                 # Application Wrapper
+├── run_full_analysis.py    # Batch Execution Pipeline
+├── requirements.txt        # Dependency Definitions
+└── README.md               # Documentation
 
 ```
 
 ---
 
-## 📊 How It Works (The Logic)
+## 📊 Design Principles
 
-1. **Ingestion:** The system loads financial tables and news feeds.
-2. **Processing:** * *Credit Engine* calculates PD based on solvency ratios.
-* *Sentiment Engine* runs inference on text to detect fear/uncertainty.
-* *Systemic Engine* builds a graph to measure node centrality.
-
-
-3. **Fusion:** The "Brain" weights these signals (e.g., Credit 50%, Sentiment 30%, Systemic 20%) to form a holistic view.
-4. **Visualization:** The Dashboard renders Solvency Maps, Radar Charts, and Risk Flow diagrams for the end-user.
+1. **Modularity:** Each risk engine functions independently. A failure in the news feed does not stop the credit analysis.
+2. **Explainability:** Scores are not black boxes; the dashboard provides drill-down capabilities to see exactly *why* a score is high (e.g., "High Debt" vs "Negative News").
+3. **Clean Architecture:** Separation of concerns between data processing, inference logic, and visualization.
 
 ---
 
 ## 📜 License
 
-This project is licensed under the MIT License - see the [LICENSE](https://www.google.com/search?q=LICENSE) file for details.
-
----
-
-<p align="center">
-Built with ❤️ by <a href="https://github.com/CholaGanesh05">CholaGanesh05</a>
-</p>
-
-```
+This project is licensed under the MIT License.
 
 ```
