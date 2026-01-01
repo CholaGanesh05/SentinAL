@@ -1,0 +1,16 @@
+pandas
+numpy
+networkx
+scikit-learn
+matplotlib
+seaborn
+xgboost
+transformers
+torch
+shap
+pyyaml
+tqdm
+openpyxl
+pydantic
+streamlit 
+plotly

@@ -1,0 +1,55 @@
+# Hyperparameters
+
+# E:\SentinAL_Project\configs\model_config.yaml
+
+global:
+  project_name: "SentinAL"
+  random_seed: 42
+  log_level: "INFO"
+  # Risk Levels thresholds (0-100 scale)
+  risk_thresholds:
+    low: 25
+    medium: 50
+    high: 75
+    critical: 90
+
+credit_risk:
+  model_type: "xgboost"
+  target_col: "is_default"
+  test_size: 0.2
+  # XGBoost specific parameters for stability
+  params:
+    objective: "binary:logistic"
+    eval_metric: "auc"
+    max_depth: 4  # Lower depth prevents overfitting
+    learning_rate: 0.05
+    n_estimators: 200
+    subsample: 0.8
+    colsample_bytree: 0.8
+  calibration:
+    method: "isotonic"  # calibrates raw probabilities to realistic risk scores
+
+systemic_risk:
+  # Graph algorithms to run
+  centrality_metrics:
+    - "pagerank"
+    - "betweenness"
+    - "eigenvector"
+  # Thresholds for flagging a "Super Spreader" node
+  contagion_threshold: 0.7
+  damping_factor: 0.85  # for PageRank
+
+sentiment_risk:
+  model_name: "ProsusAI/finbert"
+  batch_size: 16
+  max_length: 512
+  # How much weight recent news has vs old news (exponential decay)
+  time_decay_factor: 0.95 
+
+fusion:
+  method: "weighted_average"
+  # Initial weights (can be learned later via meta-model)
+  weights:
+    credit: 0.50
+    systemic: 0.30
+    sentiment: 0.20

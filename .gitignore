@@ -1,0 +1,13 @@
+# Python System Files
+__pycache__/
+*.pyc
+venv/
+.env
+
+# OS System Files
+.DS_Store
+Thumbs.db
+
+# Large/Temporary Data (Optional - keep outputs if you want to show results)
+# data/raw/
+# models/large_model.pkl
