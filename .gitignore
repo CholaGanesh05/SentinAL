@@ -1,13 +1,17 @@
-# Python System Files
-__pycache__/
-*.pyc
+# Virtual environments
 venv/
-.env
 
-# OS System Files
-.DS_Store
-Thumbs.db
+# Data & artifacts
+data/
+outputs/
+checkpoints/
 
-# Large/Temporary Data (Optional - keep outputs if you want to show results)
-# data/raw/
-# models/large_model.pkl
+# ML models
+*.pt
+*.pth
+*.bin
+*.pkl
+
+# Python junk
+__pycache__/
+*.log
